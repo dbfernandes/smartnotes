@@ -1,9 +1,16 @@
-import http from "http"
+import express from "express"
+import getEnv from "./utils/getEnv.js"
 
-const server = http.createServer((req, res) => {
-    res.writeHead(200, { "content-type": "text/plain;charset=utf-8" })
-    res.write("Instituto de Computação")
-    res.end()
+const app = express()
+const env = getEnv()
+
+const PORT = env.PORT
+
+app.get("/", (req,res) => {
+    res.send("Hello world 3!")
 })
 
-server.listen(5555)
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
+})
+
