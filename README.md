@@ -1,1 +1,1 @@
-# SmartNotes 1.0
+# SmartNotes 2.0
