@@ -7,11 +7,10 @@ const env = getEnv()
 
 const PORT = env.PORT
 
-app.get("/", (req,res) => {
-    res.send("teste")
+app.get("/", (req, res) => {
+  res.send("teste")
 })
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
+  console.log(`Server running on port ${PORT}`)
 })
-
