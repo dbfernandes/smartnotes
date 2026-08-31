@@ -3,11 +3,12 @@ import getEnv from "./utils/getEnv.js"
 
 const app = express()
 const env = getEnv()
+// Teste
 
 const PORT = env.PORT
 
 app.get("/", (req,res) => {
-    res.send("Hello world 3!")
+    res.send("teste")
 })
 
 app.listen(PORT, () => {
