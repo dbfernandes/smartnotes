@@ -2,5 +2,5 @@
 
 ## Descrição
 
-Alguma descrição 3.
+Alguma descrição 2 e 3.
 
