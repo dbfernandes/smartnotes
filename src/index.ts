@@ -1,16 +1,13 @@
 import express from "express"
+
 import getEnv from "./utils/getEnv.js"
+import router from "./router/router.js"
 
 const app = express()
 const env = getEnv()
-// Teste
 
-const PORT = env.PORT
+app.use(router)
 
-app.get("/", (req, res) => {
-  res.send("teste")
-})
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+app.listen(env.PORT, () => {
+  console.log(`Server running on port ${env.PORT}`)
 })
