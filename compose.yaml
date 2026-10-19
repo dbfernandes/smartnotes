@@ -1,0 +1,38 @@
+services:
+  api:
+    build:
+      context: .
+      target: development
+    restart: always
+    env_file:
+      - ./.env
+    ports:
+      - ${HOST_PORT}:${PORT}
+    environment:
+      - MYSQL_HOST=db
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+  db:
+    image: mysql:9.7
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - mysql-data:/var/lib/mysql
+  pma:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8283:80
+    environment:
+      - PMA_ARBITRARY=1
+
+volumes:
+  mysql-data:
+

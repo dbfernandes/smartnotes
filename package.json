@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "git-config": "bash scripts/git-config.sh",
-    "start": "tsx watch src/index.ts"
+    "start": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start:prod": "node dist/index.js"
   },
   "keywords": [],
   "author": "",
