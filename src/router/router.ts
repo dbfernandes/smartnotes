@@ -1,13 +1,8 @@
-import { Router } from "express";
+import { Router } from "express"
+import noteRouter from "../resources/note/note.router.js"
 
-const router = Router();
+const router = Router()
 
-router.get("/", (req, res) => {
-  res.send("teste 66");
-});
+router.use("/notes", noteRouter)
 
-router.get("/about", (req, res) => {
-  res.send("Página about");
-});
-
-export default router;
+export default router
