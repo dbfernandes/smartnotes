@@ -20,4 +20,4 @@ jobs:
       - name: Start services
         run: docker compose up -d --wait api-tests db
       - name: Run tests
-        run: docker compose exec -T api npm test
+        run: docker compose exec -T api-tests npm test
