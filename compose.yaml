@@ -1,5 +1,5 @@
 services:
-  api-prod:
+  api-tests:
     build:
       context: .
       target: tests
