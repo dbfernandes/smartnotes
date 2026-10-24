@@ -18,6 +18,6 @@ jobs:
       - name: Create enviroment
         run: cp .env.tests .env
       - name: Start services
-        run: docker compose up -d --wait api-prod db
+        run: docker compose up -d --wait api-tests db
       - name: Print containers
         run: docker ps
