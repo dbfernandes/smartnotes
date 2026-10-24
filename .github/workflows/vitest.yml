@@ -19,5 +19,5 @@ jobs:
         run: cp .env.tests .env
       - name: Start services
         run: docker compose up -d --wait api-tests db
-      - name: Print containers
-        run: docker ps
+      - name: Run tests
+        run: docker compose exec -T api npm test
