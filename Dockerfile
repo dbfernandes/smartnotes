@@ -15,7 +15,7 @@ ENV NODE_ENV=production
 EXPOSE 3333
 CMD [ "npm","run","start:prod" ]
 
-FROM node:24-alpine3.24 AS test
+FROM node:24-alpine3.24 AS tests
 WORKDIR /app
 COPY package*json .
 RUN npm ci --omit=dev
