@@ -22,7 +22,7 @@ RUN npm ci
 ENV NODE_ENV=tests
 COPY . .
 EXPOSE 3333
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]
 
 FROM node:24-alpine3.24 AS development
 WORKDIR /app

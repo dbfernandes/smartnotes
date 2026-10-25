@@ -5,7 +5,7 @@ services:
       target: tests
     restart: always
     env_file:
-      - ./.env.tests
+      - ./.env
     ports:
       - ${HOST_PORT}:${PORT}
     environment:
