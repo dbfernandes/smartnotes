@@ -8,8 +8,7 @@ on:
   workflow_dispatch:
 jobs:
   testes-gerais:
-    runs-on: 
-      - ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Carregar arquivos
         uses: action/checkout@v7
