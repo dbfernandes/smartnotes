@@ -10,7 +10,6 @@ jobs:
   testes-gerais:
     runs-on: 
       - ubuntu-latest
-      - ubuntu-slim
     steps:
       - name: Carregar arquivos
         uses: action/checkout@v7
