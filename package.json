@@ -9,8 +9,8 @@
     "build": "tsc",
     "start:prod": "node dist/index.js",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
-    "format:check": "prettier . --check",
+    "lint": "eslint src/",
+    "format:check": "prettier src/ --check",
     "test": "vitest run"
   },
   "keywords": [],
