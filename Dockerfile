@@ -18,11 +18,11 @@ CMD [ "npm","run","start:prod" ]
 FROM node:24-alpine3.24 AS tests
 WORKDIR /app
 COPY package*json .
-RUN npm ci --omit=dev
-COPY --from=build /app/dist ./dist
-ENV NODE_ENV=test
+RUN npm ci
+ENV NODE_ENV=tests
+COPY . .
 EXPOSE 3333
-CMD [ "npm","run","start:prod" ]
+CMD ["npm", "run", "start"]
 
 FROM node:24-alpine3.24 AS development
 WORKDIR /app
