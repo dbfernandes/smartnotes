@@ -19,8 +19,9 @@ FROM node:24-alpine3.24 AS tests
 WORKDIR /app
 COPY package*json .
 RUN npm ci
-ENV NODE_ENV=tests
+ENV NODE_ENV=test
 COPY . .
+RUN npx prisma generate
 EXPOSE 3333
 CMD ["npm", "start"]
 
