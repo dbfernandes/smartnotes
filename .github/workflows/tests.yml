@@ -1,22 +1,20 @@
-name: Testes para a aula
+name: Workflow para testes
 on:
   pull_request:
-    branches:
-      - main
-      - develop
+    types:
+      - opened
+      - synchronize
+      - reopened
   workflow_dispatch:
 jobs:
-  general-tests:
+  testes-gerais:
     runs-on: 
-      - 'ubuntu-latest'
+      - ubuntu-latest
+      - ubuntu-slim
     steps:
       - name: Carregar arquivos
-        uses: actions/checkout@v7
-      - name: Instalar o Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-      - name: Listar arquivos
+        uses: action/checkout@v7
+      - name: Instalar o node.js
+        uses: action/setup-node@v7
+      - name: Ver diretorio
         run: pwd
-  
