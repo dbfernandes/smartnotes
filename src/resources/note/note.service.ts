@@ -15,3 +15,7 @@ export const getNotes = async () => {
 export const createNote = async (data: CreateNoteDto) => {
   return prisma.note.create({ data })
 }
+
+export const getNote = async (id: string) => {
+  return prisma.note.findUnique({ where: { id } })
+}
